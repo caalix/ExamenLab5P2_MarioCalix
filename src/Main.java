@@ -62,7 +62,7 @@ public class Main extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         cb_usuarios = new javax.swing.JComboBox<>();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tabla3 = new javax.swing.JTable();
+        tabla1 = new javax.swing.JTable();
         jb_eliminar = new javax.swing.JButton();
         jb_modificar = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
@@ -244,7 +244,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        tabla3.setModel(new javax.swing.table.DefaultTableModel(
+        tabla1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -267,13 +267,13 @@ public class Main extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(tabla3);
-        if (tabla3.getColumnModel().getColumnCount() > 0) {
-            tabla3.getColumnModel().getColumn(1).setHeaderValue("Usuario");
-            tabla3.getColumnModel().getColumn(2).setHeaderValue("Contrasena");
-            tabla3.getColumnModel().getColumn(3).setHeaderValue("Edad");
-            tabla3.getColumnModel().getColumn(4).setHeaderValue("Numero de Cuenta");
-            tabla3.getColumnModel().getColumn(5).setHeaderValue("Saldo");
+        jScrollPane2.setViewportView(tabla1);
+        if (tabla1.getColumnModel().getColumnCount() > 0) {
+            tabla1.getColumnModel().getColumn(1).setHeaderValue("Usuario");
+            tabla1.getColumnModel().getColumn(2).setHeaderValue("Contrasena");
+            tabla1.getColumnModel().getColumn(3).setHeaderValue("Edad");
+            tabla1.getColumnModel().getColumn(4).setHeaderValue("Numero de Cuenta");
+            tabla1.getColumnModel().getColumn(5).setHeaderValue("Saldo");
         }
 
         jb_eliminar.setText("Eliminar");
@@ -800,9 +800,9 @@ public class Main extends javax.swing.JFrame {
                    Integer.toString(pb_usuarios.getValue() * 100 / 10) + "%"
                 );
                 JOptionPane.showMessageDialog(this,
-                        "Contacto almacenado exitosamente");
+                        "Usuario almacenado exitosamente");
                 
-                //SEGUIR ACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                //SEGUIR ACA
                 jt_nombre.setText("");
                 jt_usuario.setText("");
                 jt_contrasena.setText("");
@@ -838,9 +838,9 @@ public class Main extends javax.swing.JFrame {
                     s.getSaldo(),
                 };                
                 DefaultTableModel modelo
-                        = (DefaultTableModel) tabla3.getModel();
+                        = (DefaultTableModel) tabla1.getModel();
                 modelo.addRow(newrow);
-                tabla3.setModel(modelo);                             
+                tabla1.setModel(modelo);                             
             }
     }//GEN-LAST:event_cb_usuariosItemStateChanged
 
@@ -874,10 +874,10 @@ public class Main extends javax.swing.JFrame {
                    Integer.toString(pb_usuarios.getValue() * 100 / 10) + "%"
                 );
                 JOptionPane.showMessageDialog(this,
-                        "Contacto almacenado exitosamente");
+                        "Juego creado exitosamente");
                 
                 //SEGUIR ACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-                jt_nombrev.setText("");
+                jt_nombrev.setText(""); 
                 jt_cantidadv.setText("");
                 dc_aniov.setDate(new Date());
                 jt_preciov.setText("");
@@ -892,33 +892,32 @@ public class Main extends javax.swing.JFrame {
 
     private void jb_eliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_eliminarMouseClicked
         // TODO add your handling code here:
-        if (tabla3.getSelectedRow() >= 0) {
+        if (tabla1.getSelectedRow() >= 0) {
             DefaultTableModel modelo
-                    = (DefaultTableModel) tabla3.getModel();
-            modelo.removeRow(tabla3.getSelectedRow());
-            tabla3.setModel(modelo);
+                    = (DefaultTableModel) tabla1.getModel();
+            modelo.removeRow(tabla1.getSelectedRow());
+            tabla1.setModel(modelo);
         }
     }//GEN-LAST:event_jb_eliminarMouseClicked
 
     private void jb_modificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_modificarMouseClicked
         // TODO add your handling code here:
-        if (tabla3.getSelectedRow() >= 0) {
+        if (tabla1.getSelectedRow() >= 0) {
             DefaultTableModel modelo
-                    = (DefaultTableModel) tabla3.getModel();
+                    = (DefaultTableModel) tabla1.getModel();
             
             int mes = Integer.parseInt(
                     JOptionPane.showInputDialog("nuevo mes")
             );
             ((Date) modelo.getValueAt(
-                    tabla3.getSelectedRow(), 3)).setMonth(mes);
-            tabla3.setModel(modelo);
-            //tf_edad_maxima.setText(maxima_edad());
+                    tabla1.getSelectedRow(), 3)).setMonth(mes);
+            tabla1.setModel(modelo);
         }
     }//GEN-LAST:event_jb_modificarMouseClicked
 
     private void jt_dineroDisponiblePropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jt_dineroDisponiblePropertyChange
         // TODO add your handling code here:
-        double saldo = Double.parseDouble(jt_dineroDisponible.getText());
+        //double saldo = Double.parseDouble(jt_dineroDisponible.getText());
     }//GEN-LAST:event_jt_dineroDisponiblePropertyChange
 
     private void cb_videojuegosItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_videojuegosItemStateChanged
@@ -1065,8 +1064,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField jt_retirarDinero;
     private javax.swing.JTextField jt_usuario;
     private javax.swing.JProgressBar pb_usuarios;
+    private javax.swing.JTable tabla1;
     private javax.swing.JTable tabla2;
-    private javax.swing.JTable tabla3;
     private javax.swing.JTable tabla4;
     private javax.swing.ButtonGroup tipo_usuario;
     // End of variables declaration//GEN-END:variables
